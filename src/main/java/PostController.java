@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 public class PostController {
     @GetMapping
-    public String getPosts("/post") {
+    public String getPosts() {
         return "returns the post ";
     }
 
