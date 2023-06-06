@@ -8,6 +8,8 @@
 <p>User Selection <span th:text="${guess}"></span></p>
 <p>Random Number <span th:text="${randomNum}"></span> </p>
 
+
+
 <p th:if="${guess == randomNum}">You win</p>
 <p th:if="${guess != randomNum}">You lose</p>
 
