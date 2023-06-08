@@ -1,4 +1,4 @@
-package controllers;
+package com.codeup.codeupspringblog.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +9,7 @@ import java.util.Random;
 
 @Controller
 public class DiceController {
+
 
 
     @GetMapping("/roll-dice")
@@ -32,5 +33,6 @@ public class DiceController {
         //These attributes are what will be used inside the html files
         return "/dice/dice-revealer";
         //this return statement will take us to the dice selector page.
+        //We use return to
     }
 }
