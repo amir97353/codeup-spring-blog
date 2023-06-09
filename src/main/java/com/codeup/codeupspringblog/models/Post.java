@@ -20,7 +20,7 @@ public class Post {
     private Long id;
     //this is just setting the primary key and having it auto increment
 
-    @Column(nullable = false,columnDefinition = "VARCHAR(100")
+    @Column(nullable = false, columnDefinition = "VARCHAR(100)")
     private String title;
     //This creates the column title
     //column defintion puts the type
