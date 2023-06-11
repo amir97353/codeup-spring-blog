@@ -1,4 +1,6 @@
-package com.codeup.kotlinspringblog.services;
+package com.codeup.codeupspringblog.services;
+
+
 
 import com.codeup.codeupspringblog.models.User;
 import com.codeup.codeupspringblog.models.UserWithRoles;
@@ -20,7 +22,7 @@ public class UserDetailsLoader implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        // The findByUsername method needs to be established in our UserRepository
+
         User user = users.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("No user found for " + username);
