@@ -40,7 +40,8 @@ public class PostController {
     }
 
     @GetMapping("/posts/create")
-    public String showPostForm() {
+    public String showPostForm(Model model) {
+        model.addAttribute("post", new Post());
         return "/posts/create";
     }
 
@@ -52,4 +53,23 @@ public class PostController {
         postsDao.save(post);
         return "redirect:/posts";
     }
+
+    @GetMapping("/posts/{id}/edit")
+    public String showEditForm(@PathVariable long id, Model model) {
+        if(postsDao.findById(id).isPresent()) {
+            Post postToEdit = postsDao.findById(id).get();
+            model.addAttribute("post", postToEdit);
+        }
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/{id}/edit")
+    public String updatePost(@ModelAttribute Post newPost) {
+        User user = userDao.findById(1L).get();
+        newPost.setUser(user);
+        postsDao.save(newPost);
+        return "redirect:/posts";
+    }
+
+
 }
