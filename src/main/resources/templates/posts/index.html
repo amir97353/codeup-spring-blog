@@ -12,7 +12,11 @@
 <div class="container">
   <h1 th:replace="partials/header :: header"></h1>
   <th:block th:each="post: ${posts}">
-    <h1><a th:href="@{/posts/{id}( id = ${post.id})}" th:text="${post.title}"></a></h1>
+    <h1><a th:href="@{/posts/{id}( id = ${post.id})}" th:text="${post.title}" th:object="${post}"></a>
+      <form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" style="display: inline;">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </h1>
   </th:block>
 </div>
 <footer th:replace="partials/footer :: footer"></footer>
